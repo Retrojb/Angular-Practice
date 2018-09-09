@@ -8,16 +8,19 @@
   <div>
     <span class="badges">First Name: </span>{{hero.firstName}}
     <input [(ngModel)]="hero.firstName" placeholder="name">
+    <button (click)="save()">Save</button>
   </div>
 
   <div>
     <span class="badges">Last Name: </span>{{hero.lastName}}
     <input [(ngModel)]="hero.lastName" placeholder="Last Name">
+    <button (click)="save()">Save</button>
   </div>
 
   <div>
     <span class="badges">Salary: </span>{{hero.salary}}
     <input [(ngModel)]="hero.salary" placeholder="Salary">
+    <button (click)="save()">Save</button>
   </div>
   <button (click)="goBack()"> Go Back</button>
 </div>
