@@ -4,6 +4,11 @@ import { Hero } from './hero';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { TemplateParseError } from '../../node_modules/@angular/compiler';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +46,15 @@ updateHero (hero: Hero): Observable<any> {
   .pipe(
     tap(_ => this.log(`updated hero id=${hero.id}`)),
     catchError(this.handleError<any>('updatedHero'))
+  );
+}
+
+/* Adds a new heroo to the server, POST */
+addHero (hero: Hero): Observable<Hero> {
+  return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
+  .pipe(
+    tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`),
+  catchError(this.handleError<Hero>('addHero')))
   );
 }
 
