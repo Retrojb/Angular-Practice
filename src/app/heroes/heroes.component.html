@@ -1,11 +1,5 @@
 <h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-    <span class="badge">{{hero.id}}</span> {{hero.firstName | uppercase}}
-  </a>
-  </li>
-</ul>
+
 <div>
   <label>
     <input #heroFirstName />
@@ -14,12 +8,14 @@
     Add
   </button>
 </div>
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
       <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.firstName | uppercase}}
+        <span class="badge">{{hero.id}}</span> {{hero.firstName | uppercase}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">X</button>
     </li>
   </ul>
 
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
