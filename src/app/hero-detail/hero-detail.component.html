@@ -1,6 +1,6 @@
-<div *ngIf="selectedHero">
+<div *ngIf="hero">
 
-  <h2>{{hero.firstName + " " + hero.lastName | uppercase}} Details:</h2>
+  <h2>{{hero.firstName + " " + hero.lastName | uppercase}} Details</h2>
   <div>
     <span class="badges">Employee Id: </span>{{hero.id}}
   </div>
@@ -19,4 +19,5 @@
     <span class="badges">Salary: </span>{{hero.salary}}
     <input [(ngModel)]="hero.salary" placeholder="Salary">
   </div>
+  <button (click)="goBack()"> Go Back</button>
 </div>
