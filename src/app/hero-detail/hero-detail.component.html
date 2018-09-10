@@ -1,11 +1,11 @@
 <div *ngIf="hero">
 
-  <h2>{{hero.firstName + " " + hero.lastName | uppercase}}</h2>
-  <span>Details</span>
-  <div>
-    <span>Employee Id: </span>{{hero.id}}
+  <h2 class="main-name">{{hero.firstName + " " + hero.lastName | uppercase}}</h2>
+  <span>Employee Details:</span>
+  <div class="details">
+    <span>Employee Id: </span>{{hero.id + " " + hero.job | uppercase}}
   </div>
-  
+  <div class="main-container">
   <div>
     <span class="badges">First Name: </span>{{hero.firstName}} 
     <input [(ngModel)]="hero.firstName" placeholder="name" />
@@ -19,9 +19,24 @@
   </div>
   
   <div>
+      <span class="badges">Job: </span>{{hero.job | uppercase}}
+      <input [(ngModel)]="hero.job" placeholder="Current job">
+      <button (click)="save()">Save</button>
+    </div>
+  
+    <div>
     <span class="badges">Salary: </span>{{hero.salary}}
-    <input [(ngModel)]="hero.salary" placeholder="Salary">
+    <input [(ngModel)]="hero.address" placeholder="address">
     <button (click)="save()">Save</button>
   </div>
-  <button (click)="goBack()"> Go Back</button>
+
+
+    <div>
+        <span class="badges">Address: </span>{{hero.address}}
+        <input [(ngModel)]="hero.salary" placeholder="Salary">
+        <button (click)="save()">Save</button>
+      </div>
+</div>
+
+<button (click)="goBack()"> Go Back</button>
 </div>

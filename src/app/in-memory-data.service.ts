@@ -6,7 +6,9 @@ export class InMemoryDataService implements InMemoryDbService {
         {id: 1,
         firstName: 'John',
         lastName: 'Baltes',
-        salary: 60000
+        job: 'programmer',
+        salary: 60000,
+        address: '333 Something St'
       },
       {
         id: 2,

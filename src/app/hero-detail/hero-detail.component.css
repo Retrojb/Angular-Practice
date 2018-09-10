@@ -1,4 +1,7 @@
-/* HeroDetailComponent's private CSS styles */
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
 label {
   display: inline-block;
   width: 3em;
@@ -6,6 +9,10 @@ label {
   color: #607D8B;
   font-weight: bold;
 }
+.main-name{
+  font-size: 30px;
+}
+
 .badges{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;

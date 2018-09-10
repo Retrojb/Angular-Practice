@@ -11,7 +11,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   
   imports: [
@@ -20,7 +20,8 @@ import { MessagesComponent } from './messages/messages.component';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,
-       {dataEncapsulation: false})
+       {dataEncapsulation: false}),
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
